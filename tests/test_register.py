@@ -1,5 +1,4 @@
 import allure
-import pytest
 
 import data
 from methods.register_methods import RegisterMethods
@@ -14,4 +13,4 @@ class TestRegister:
     @allure.title('Регистрация пользователя с неуникальными данными')
     def test_register_not_unique_user(self):
         not_unique_user = RegisterMethods().user_registration(data.EMAIL, data.PASSWORD, False)
-        assert not_unique_user[0] == 400 and not_unique_user[1]['message'] == data.MASSAGE_FOR_NOT_UNIQUE_USER
+        assert not_unique_user[0] == 400 and not_unique_user[1]['message'] == data.MESSAGE_FOR_NOT_UNIQUE_USER
